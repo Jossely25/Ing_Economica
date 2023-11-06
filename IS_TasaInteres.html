@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="https://www.piranirisk.com/hubfs/0000000000%20AAAA%20blog/Laft/h_laft_lavado_de_dinero_3.jpg" type="image/x-icon">
+    
+    <title>Ingeniería Económica.</title>
+
+    <style>
+      form {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  background-color: #f7f7f7;
+}
+
+p {
+  font-weight: bold;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input[type="button"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+input[type="button"]:hover {
+  background-color: #4CAF50;
+}
+
+a {
+  text-decoration: none;
+  color: #4CAF50;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+
+    <script type="text/javascript">
+    function calcularTasaInteres(){
+
+     var valorPresente, valorFuturo, tasaInteres, tiempo;
+
+     //Hace el llamado a los datos ingresados
+      valorPresente=document.getElementById("valorPresente").value;
+      tiempo=document.getElementById("tiempo").value;
+      valorFuturo=document.getElementById("valorFuturo").value;
+
+      tasaInteres=((valorFuturo/valorPresente-1)/tiempo)*100;
+     //Envia el resultado y lo reducimos a 0 decimales
+     document.getElementById("tasaInteres").value=tasaInteres.toFixed(0);
+
+     if(valorPresente == ""){
+     	window.alert("El campo Valor Presente es obligatorio");
+     }
+     if(valorFuturo == ""){
+       window.alert("El campo Valor Futuro es obligatorio");
+     }
+     if(tiempo == ""){
+     	window.alert("El campo Tiempo es obligatorio");
+     }
+
+     //Para enviar la leyenda cuando falten campos por llenar o de lo contrario mande la leyenda con el resultado
+      if(valorPresente == ""){
+        window.alert("Por favor, llene los campos restantes");
+      }
+      else{
+        if(valorFuturo == ""){
+       		window.alert("Por favor, llene los campos restantes");
+       	}
+        else{
+       	if(tiempo == ""){
+       		window.alert("Por favor, llene los campos restantes");
+       	}
+        else
+       	//Envia la leyenda correspondiente
+       	document.getElementById("tasaInteres").value=tasaInteres.toFixed(0);
+      }
+    }
+  }
+</script>
+</head>
+<body>
+  <div id="container-page-index">
+    <nav>
+      <ul class="menu-horizontal">
+          <li>
+              <a href="principal.html">Inicio</a>
+          </li>
+          <li>
+              <a href="calculadoraSimple.html">Interes Simple</a>
+          </li>
+          <li>
+              <a href="calculadoraCompuesto.html">Interes Compuesto</a>
+          </li>
+          <li>
+              <a href="calculadoraAnualidades.html">Anualidades</a>
+          </li>
+          <li>
+              <a href="calculadoraGradientes.html">Gradientes</a>
+          </li>
+      </ul>
+  </nav><br><br><br><br>
+  <div class="center">
+  <div id="contenedor">
+    <header id="cabecera">
+      <h1>Tasa de interes en interes simple</h1>
+    </header>
+
+        <form class="form-container">
+          <p>Ingrese los siguientes datos: </p><br>
+          <p>Valor Presente: </p>
+          <input type="number" name="valorPresente" id="valorPresente" required> <br> <br>
+          <p>Valor Futuro: </p>
+          <input type="number" name="valorFuturo" id="valorFuturo" required> <br> <br>
+          <p>Tiempo: </p>
+          <input type="number" name="tiempo" id="tiempo" required><br> <br>
+          <p>La tasa de interes en % es: </p>
+          <input type="number" name="tasaInteres" id="tasaInteres" disabled>
+          <br><br>
+          <input type="button" value="Calcular Tasa de Interes" class="button" onClick="calcularTasaInteres()">
+          <a href="calculadoraSimple.html">
+          <input type="button" class="button" value="Regresar"></a>
+          <br> <br>
+          
+        </form>
+  </div>
+  </div>
+    </div>
+  </body>
+</html>

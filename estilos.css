@@ -1,0 +1,229 @@
+/* Estilos generales */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos para el fondo */
+
+#container-page-index {
+  position: relative;
+}
+
+#container-page-index::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.piranirisk.com/hubfs/0000000000%20AAAA%20blog/Laft/h_laft_lavado_de_dinero_3.jpg");
+  opacity: 0.3;
+  z-index: -1;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Estilos para el menú */
+
+nav {
+  background-color: green;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+}
+
+.menu-horizontal {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-horizontal li {
+  margin: 0 10px;
+}
+
+.menu-horizontal li:last-child {
+  margin-right: 0;
+}
+
+.menu-horizontal li a {
+  display: block;
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-horizontal li:hover {
+  background-color: greenyellow;
+}
+
+/* Estilos para centrar todo */
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+}
+
+/* Estilos para la imagen y el texto al lado */
+
+.contenedorFLEX {
+  display: flex;
+}
+
+.imagenContendor2 {
+  height: 150px;
+  width: 300px;
+  margin: 10px;
+}
+
+.contenedorPequeño {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.texto {
+  text-align: justify;
+}
+
+/* Estilos para los dos contenedores */
+
+.flexContainer {
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+}
+
+.contenedorIzquierdo {
+  width: 50%;
+}
+
+.contenedorDerecho {
+  width: 50%;
+}
+
+/* Estilos para la versión responsive */
+
+@media (max-width: 768px) {
+  .menu-horizontal {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -8px);
+  }
+  
+  .menu-toggle.active span {
+    background-color: #fff;
+  }
+  
+  .menu-horizontal {
+    display: none;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+  }
+  
+  .menu-horizontal li {
+    margin-bottom: 10px;
+  }
+  
+  .menu-horizontal li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .menu-horizontal li a {
+    color: #000;
+  }
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/* Estilo para el footer */
+footer {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-content p:last-child {
+  margin-top: 10px;
+}

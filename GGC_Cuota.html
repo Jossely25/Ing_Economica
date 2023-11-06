@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="https://www.piranirisk.com/hubfs/0000000000%20AAAA%20blog/Laft/h_laft_lavado_de_dinero_3.jpg" type="image/x-icon">
+    
+    <title>Ingeniería Económica</title>
+
+    <style>
+        form {
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            background-color: #f7f7f7;
+        }
+
+        p {
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        input[type="button"]:hover {
+            background-color: #4CAF50;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function calcularCuotaGradGeometricoCreciente() {
+            var cuota, anualidad, variacionPorcentual, tiempo;
+            // Obtiene los datos ingresados
+            anualidad = parseFloat(document.getElementById("anualidad").value);
+            variacionPorcentual = parseFloat(document.getElementById("variacionPorcentual").value) / 100;
+            tiempo = parseFloat(document.getElementById("tiempo").value);
+
+            // Valida que los campos no estén vacíos
+            if (isNaN(anualidad) || isNaN(variacionPorcentual) || isNaN(tiempo)) {
+                window.alert("Por favor, ingrese valores válidos en todos los campos.");
+                return;
+            }
+
+            // Calcula la cuota en el gradiente geométrico creciente
+            cuota = anualidad * Math.pow(1 + variacionPorcentual, tiempo - 1);
+
+            // Muestra el resultado y lo reduce a dos decimales
+            document.getElementById("cuota").value = cuota.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+<div id="container-page-index">
+    <nav>
+        <ul class="menu-horizontal">
+            <li>
+                <a href="principal.html">Inicio</a>
+            </li>
+            <li>
+                <a href="calculadoraSimple.html">Interes Simple</a>
+            </li>
+            <li>
+                <a href="calculadoraCompuesto.html">Interes Compuesto</a>
+            </li>
+            <li>
+                <a href="calculadoraAnualidades.html">Anualidades</a>
+            </li>
+            <li>
+                <a href="calculadoraGradientes.html">Gradientes</a>
+            </li>
+        </ul>
+    </nav><br><br><br><br>
+    <div class="center">
+        <div id="contenedor">
+            <header id="cabecera">
+                <h1>Cuota en gradiente geométrico creciente</h1>
+            </header>
+            <form>
+                <p>Ingrese los siguientes datos: </p><br>
+                <p>Anualidad: </p>
+                <input type="number" name="anualidad" id="anualidad" step="0.01" required> <br> <br>
+                <p>Variación Porcentual %: </p>
+                <input type="number" name="variacionPorcentual" id="variacionPorcentual" step="0.01" required><br> <br>
+                <p>Tiempo: </p>
+                <input type="number" name="tiempo" id="tiempo" step="1" required> <br> <br>
+                <p>El valor de la cuota es: </p>
+                <input type="number" name="cuota" id="cuota" disabled>
+                <br><br>
+                <input type="button" value="Calcular Cuota" class="button" onClick="calcularCuotaGradGeometricoCreciente()">
+                <a href="calculadoraGradientes.html">
+                    <input type="button" class="button" value="Regresar"></a>
+                <br> <br>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
